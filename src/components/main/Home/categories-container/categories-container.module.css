@@ -1,0 +1,30 @@
+.categories_container{
+    margin-top: 2.5rem;
+}
+
+.categories_container .title{
+    padding-left: 1rem;
+    margin-bottom: 2rem;
+}
+
+.category_item{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 17rem;
+    height: 17rem;
+
+    background-size: cover;
+    border-radius: 16px;
+}
+
+.category_item .title{
+    padding: 0;
+    margin: 6px 0;
+}
+
+.container{
+    display: inline-flex;
+    justify-content: space-between;
+    width: 100%;
+}

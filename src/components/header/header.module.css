@@ -1,0 +1,47 @@
+.header {
+  width: 346px;
+  background: #0E002C;
+}
+.header .navigation_container {
+  margin: 0 24px;
+  margin-top: 5rem;
+}
+.header .navigation_container .nav_link {
+  display: flex;
+  align-content: center;
+  color: white;
+  text-decoration: none;
+}
+.header .navigation_container .nav_link:nth-child(-n+2) {
+  margin-bottom: 22px;
+}
+.header .navigation_container .nav_link svg {
+  height: 31.22px;
+}
+.header .navigation_container .nav_link .name {
+  margin-left: 14px;
+}
+.header .navigation_container .nav_link:hover {
+  color: rgb(149, 149, 149);
+  cursor: pointer;
+}
+.header .song_img {
+  margin-top: 55.4px;
+  width: 100%;
+}
+.header .player_container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 5px;
+}
+.header .player_container .song_title, .header .player_container .song_artist {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+.header .player_container .song_title {
+  margin-top: 13px;
+}
+.header .player_container .song_artist {
+  margin-bottom: 6px;
+}/*# sourceMappingURL=header.module.css.map */
