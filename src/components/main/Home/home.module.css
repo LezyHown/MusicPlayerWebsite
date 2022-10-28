@@ -48,6 +48,9 @@
 .home .start_container .title {
   padding-left: 1rem;
 }
-.home .categories_container {
-  margin-top: 11px;
+.home .categ_container {
+  margin-top: 2rem;
+}
+.home .categ_container:nth-child(2) {
+  margin-top: 6px;
 }/*# sourceMappingURL=home.module.css.map */

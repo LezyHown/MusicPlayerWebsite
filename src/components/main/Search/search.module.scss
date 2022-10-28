@@ -1,10 +1,10 @@
 .search{
     width: 66rem;
-    background-image: linear-gradient(170deg, #0400D0 1%, #000000 45%, #000000 100%, #000000 100%, #000000 100%);
+    background-image: linear-gradient(170deg, #0400D0 1%, #000000 20%, #000000 100%, #000000 100%, #000000 100%);
     margin-bottom: 3rem;
 
     .__container{
-        padding-top: 40px;
+        padding-top: 30px;
         margin: 0 76px 0 57px;
 
         .start_container{
@@ -43,6 +43,15 @@
                 margin-top: 0.2rem;
                 filter: brightness(0%);
             }
+        }
+
+        .categ_container{
+            margin: 2.5rem 0;
+            
+        }
+
+        .big_categ_container{
+            margin-top: 3rem;
         }
     }
 }

@@ -9,18 +9,18 @@ import { ReactComponent as NotificationIcon } from './images/icons/notification.
 import { ReactComponent as SettingsIcon } from './images/icons/settings.svg';
 import { ReactComponent as CircleIcon } from './images/icons/circle.svg';
 
-import AcousticImg from './images/icons/categories/acoustic.png';
-import ElectronicImg from './images/icons/categories/electronic.png';
-import RomanticImg from './images/icons/categories/romantic.png';
-import HipHopImg from './images/icons/categories/hiphop.png';
-import GlobalTopImg from './images/icons/categories/globaltop.png';
+import AcousticImg from './images/categories/acoustic.png';
+import ElectronicImg from './images/categories/electronic.png';
+import RomanticImg from './images/categories/romantic.png';
+import HipHopImg from './images/categories/hiphop.png';
+import GlobalTopImg from './images/categories/globaltop.png';
 
-import OldMusicImg from './images/icons/categories/oldmusic.jpg';
-import PopMusicImg from './images/icons/categories/pop.jpg';
-import OldHitsImg from './images/icons/categories/cassettes.jpg';
-import LiveMusicImg from './images/icons/categories/live.jpg';
-import ConanGrayImg from './images/icons/categories/conangray.jpg';
-import PlayboiCartiImg from './images/icons/categories/playboicarti.jpg';
+import OldMusicImg from './images/categories/oldmusic.jpg';
+import PopMusicImg from './images/categories/pop.jpg';
+import OldHitsImg from './images/categories/cassettes.jpg';
+import LiveMusicImg from './images/categories/live.jpg';
+import ConanGrayImg from './images/categories/conangray.jpg';
+import PlayboiCartiImg from './images/categories/playboicarti.jpg';
 
 function Home(){
     return (
@@ -36,26 +36,33 @@ function Home(){
                 </div>
             </div>
 
-            <CategoriesContainer arr={[
-                { title: 'Library', height: '5rem', icon: <CircleIcon/> },
-                { title: 'Acoustic', height: '5rem', img_src: AcousticImg },
-                { title: `Electronic`, height: '5rem', img_src: ElectronicImg },
-                { title: 'Romantic', height: '5rem', img_src: RomanticImg },
-                { title: 'Hip-Hop', height: '5rem', img_src: HipHopImg },
-                { title: 'Global Top', height: '5rem', img_src: GlobalTopImg }
-            ]}/>
-    
-            <CategoriesContainer title='Shows to try' arr={[
-                { title: 'Old is Gold', img_src: OldMusicImg },
-                { title: 'Pop Hits', img_src: PopMusicImg },
-                { title: `90's Hits`, img_src: OldHitsImg }
-            ]}/>
+            <div className={style.categ_container}>
+                <CategoriesContainer arr={[
+                    { title: 'Library', height: '5rem', icon: <CircleIcon/> },
+                    { title: 'Acoustic', height: '5rem', img_src: AcousticImg },
+                    { title: `Electronic`, height: '5rem', img_src: ElectronicImg },
+                    { title: 'Romantic', height: '5rem', img_src: RomanticImg },
+                    { title: 'Hip-Hop', height: '5rem', img_src: HipHopImg },
+                    { title: 'Global Top', height: '5rem', img_src: GlobalTopImg }
+                ]}/>
+            </div>
             
+            <div className={style.categ_container}>
+                <CategoriesContainer title='Shows to try' arr={[
+                    { title: 'Old is Gold', img_src: OldMusicImg },
+                    { title: 'Pop Hits', img_src: PopMusicImg },
+                    { title: `90's Hits`, img_src: OldHitsImg }
+                ]}/>
+            </div>
+
+            <div className={style.categ_container}>
             <CategoriesContainer title='Your Top Mixes' arr={[
                 { title: 'Live Music', img_src: LiveMusicImg },
                 { title: 'Conan Gray', img_src: ConanGrayImg },
                 { title: `Playboi Carti`, img_src: PlayboiCartiImg }
             ]}/>
+            </div>
+            
             </div>
         </div>
     );
