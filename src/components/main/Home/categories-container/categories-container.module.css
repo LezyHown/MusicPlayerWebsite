@@ -8,14 +8,19 @@
 }
 
 .category_item{
+    background: #474747;
+
     display: flex;
     justify-content: center;
-    align-items: flex-end;
     width: 17rem;
-    height: 17rem;
 
     background-size: cover;
     border-radius: 16px;
+}
+
+.category_item .icon{
+    position: relative;
+    left: -1.25rem;
 }
 
 .category_item .title{
@@ -23,8 +28,16 @@
     margin: 6px 0;
 }
 
+.light_title{
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+}
+
 .container{
     display: inline-flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
     width: 100%;
 }

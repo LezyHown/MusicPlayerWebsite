@@ -23,15 +23,6 @@ import ConanGrayImg from './images/icons/categories/conangray.jpg';
 import PlayboiCartiImg from './images/icons/categories/playboicarti.jpg';
 
 function Home(){
-    let categoriesArr = [ 
-        { title: 'Old is Gold', img_src: OldMusicImg },
-        { title: 'Pop Hits', img_src: PopMusicImg },
-        { title: `90's Hits`, img_src: OldHitsImg },
-        { title: 'Live Music', img_src: LiveMusicImg },
-        { title: 'Conan Gray', img_src: ConanGrayImg },
-        { title: `Playboi Carti`, img_src: PlayboiCartiImg }
-    ];
-
     return (
         <div className={style.home}>
             <div className={style.__container}>
@@ -44,32 +35,27 @@ function Home(){
                     <SettingsIcon/>
                 </div>
             </div>
-            
 
-            <div className={style.categories_container}>
-                <div className={style.category_item} style={{background: `#474747`, borderRadius: `16px`}}>
-                    <CircleIcon/>
-                    <span className={style.title}>Library</span>
-                </div>
-                <div className={style.category_item} style={{backgroundImage: `url(${ AcousticImg })`}}>
-                    <span className={style.title}>Acoustic</span>
-                </div>
-                <div className={style.category_item} style={{backgroundImage: `url(${ ElectronicImg })`}}>
-                    <span className={style.title}>Electronic</span>
-                </div>
-                <div className={style.category_item} style={{backgroundImage: `url(${ RomanticImg })`}}>
-                    <span className={style.title}>Romantic</span>
-                </div>
-                <div className={style.category_item} style={{backgroundImage: `url(${ HipHopImg })`}}>
-                    <span className={style.title}>Hip-Hop</span>
-                </div>
-                <div className={style.category_item} style={{backgroundImage: `url(${ GlobalTopImg })`}}>
-                    <span className={style.title}>Global Top</span>
-                </div>
-            </div>
+            <CategoriesContainer arr={[
+                { title: 'Library', height: '5rem', icon: <CircleIcon/> },
+                { title: 'Acoustic', height: '5rem', img_src: AcousticImg },
+                { title: `Electronic`, height: '5rem', img_src: ElectronicImg },
+                { title: 'Romantic', height: '5rem', img_src: RomanticImg },
+                { title: 'Hip-Hop', height: '5rem', img_src: HipHopImg },
+                { title: 'Global Top', height: '5rem', img_src: GlobalTopImg }
+            ]}/>
+    
+            <CategoriesContainer title='Shows to try' arr={[
+                { title: 'Old is Gold', img_src: OldMusicImg },
+                { title: 'Pop Hits', img_src: PopMusicImg },
+                { title: `90's Hits`, img_src: OldHitsImg }
+            ]}/>
             
-            <CategoriesContainer title='Shows to try' arr={categoriesArr.slice(0, 3)}/>
-            <CategoriesContainer title='Your Top Mixes' arr={categoriesArr.slice(3)}/>
+            <CategoriesContainer title='Your Top Mixes' arr={[
+                { title: 'Live Music', img_src: LiveMusicImg },
+                { title: 'Conan Gray', img_src: ConanGrayImg },
+                { title: `Playboi Carti`, img_src: PlayboiCartiImg }
+            ]}/>
             </div>
         </div>
     );

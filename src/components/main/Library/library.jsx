@@ -5,7 +5,9 @@ import style from './library.module.css';
 function Library(){
     return (
         <div className={style.library}>
-            <h1>Library Page</h1>
+            <div className={style.__container}>
+                <h3 className={style.title}>Library</h3>
+            </div>
         </div>
     );
 }

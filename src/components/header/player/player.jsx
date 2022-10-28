@@ -8,7 +8,7 @@ import { ReactComponent as PauseBtn } from './images/pause.svg';
 import { ReactComponent as NextBtn } from './images/next.svg';
  
 function Player (props) {
-    let State = props.pstate  == "true" ? <PauseBtn/> : <PlayBtn/>;
+    let State = props.pstate  === "true" ? <PauseBtn/> : <PlayBtn/>;
 
     return (
         <div className={style.player}>
