@@ -2,7 +2,7 @@ import React from "react";
 
 import style from './home.module.css';
 
-import CategoriesContainer from "./categories-container/categories-container";
+import MusicCategory from "../MusicCategory/MusicCategory";
 
 import { ReactComponent as HistoryIcon } from './images/icons/history.svg';
 import { ReactComponent as NotificationIcon } from './images/icons/notification.svg';
@@ -37,7 +37,7 @@ function Home(){
                 </div>
 
                 <div className={style.categ_container}>
-                    <CategoriesContainer arr={[
+                    <MusicCategory data={[
                         { title: 'Library', height: '5rem', icon: <CircleIcon/> },
                         { title: 'Acoustic', height: '5rem', img_src: AcousticImg },
                         { title: `Electronic`, height: '5rem', img_src: ElectronicImg },
@@ -48,7 +48,7 @@ function Home(){
                 </div>
                 
                 <div className={style.categ_container}>
-                    <CategoriesContainer title='Shows to try' arr={[
+                    <MusicCategory title='Shows to try' data={[
                         { title: 'Old is Gold', img_src: OldMusicImg },
                         { title: 'Pop Hits', img_src: PopMusicImg },
                         { title: `90's Hits`, img_src: OldHitsImg }
@@ -56,7 +56,7 @@ function Home(){
                 </div>
 
                 <div className={style.categ_container}>
-                    <CategoriesContainer title='Your Top Mixes' arr={[
+                    <MusicCategory title='Your Top Mixes' data={[
                         { title: 'Live Music', img_src: LiveMusicImg },
                         { title: 'Conan Gray', img_src: ConanGrayImg },
                         { title: `Playboi Carti`, img_src: PlayboiCartiImg }

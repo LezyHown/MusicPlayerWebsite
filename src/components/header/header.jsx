@@ -7,7 +7,7 @@ import style from './header.module.css';
 import EmptySongImg from './images/emptysong.png';
 import Player from "./player/player";
 
-import Icon from '../icons/IconManager';
+import Icon from '../IconManager/IconManager';
 
 const rect_active_page = <div className={style.rect_active_page} style={{
     position: "absolute",

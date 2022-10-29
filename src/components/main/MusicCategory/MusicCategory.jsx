@@ -1,12 +1,12 @@
 import React from "react";
 
-import style from './categories-container.module.css';
+import style from './MusicCategory.module.css';
 
 let isShort = false;
 
 /* 
     Title - Заголовок над контейнером
-    arr - массив из блоков категорий с настройкой их содержимого
+    data - массив из блоков категорий с настройкой их содержимого
     с свойствами, пример одного блока в массиве:
     [{
       title: название внутри блока, 
@@ -19,7 +19,7 @@ let isShort = false;
 */
 function CategoriesContainer(props)
 {
-    let Items = props.arr.map( item => {
+    let Items = props.data.map( item => {
         isShort = item.height !== undefined;
 
         return (

@@ -1,6 +1,6 @@
 import React from "react";
 
-import Icon from "../../icons/IconManager";
+import Icon from "../../IconManager/IconManager";
 import CreatePlaylistBox from "./create-playlist-box/create-playlist-box";
 import ItemContainer from "./item-container/item-container";
 
