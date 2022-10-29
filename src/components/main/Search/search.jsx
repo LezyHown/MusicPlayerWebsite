@@ -50,7 +50,7 @@ function Search(){
                     <CategoriesContainer arr={[
                         { title: "Party Mix", img_src: pmix_img, icon: <Icon name="Play"/> },
                         { title: "DJ Mix", img_src: djmix_img, icon: <Icon name="Play"/> },
-                    ]} border="true" _width="20.5rem"/>
+                    ]} border="true" width="20.5rem"/>
                 </div>
             </div>
         </div>

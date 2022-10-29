@@ -26,43 +26,42 @@ function Home(){
     return (
         <div className={style.home}>
             <div className={style.__container}>
-            <div className={style.start_container}>
-                <h3 className={style.title}>Good morning</h3>
+                <div className={style.start_container}>
+                    <h3 className={style.title}>Good morning</h3>
 
-                <div className={style.icons_container}>
-                    <NotificationIcon/>
-                    <HistoryIcon/>
-                    <SettingsIcon/>
+                    <div className={style.icons_container}>
+                        <NotificationIcon/>
+                        <HistoryIcon/>
+                        <SettingsIcon/>
+                    </div>
                 </div>
-            </div>
 
-            <div className={style.categ_container}>
-                <CategoriesContainer arr={[
-                    { title: 'Library', height: '5rem', icon: <CircleIcon/> },
-                    { title: 'Acoustic', height: '5rem', img_src: AcousticImg },
-                    { title: `Electronic`, height: '5rem', img_src: ElectronicImg },
-                    { title: 'Romantic', height: '5rem', img_src: RomanticImg },
-                    { title: 'Hip-Hop', height: '5rem', img_src: HipHopImg },
-                    { title: 'Global Top', height: '5rem', img_src: GlobalTopImg }
-                ]}/>
-            </div>
-            
-            <div className={style.categ_container}>
-                <CategoriesContainer title='Shows to try' arr={[
-                    { title: 'Old is Gold', img_src: OldMusicImg },
-                    { title: 'Pop Hits', img_src: PopMusicImg },
-                    { title: `90's Hits`, img_src: OldHitsImg }
-                ]}/>
-            </div>
+                <div className={style.categ_container}>
+                    <CategoriesContainer arr={[
+                        { title: 'Library', height: '5rem', icon: <CircleIcon/> },
+                        { title: 'Acoustic', height: '5rem', img_src: AcousticImg },
+                        { title: `Electronic`, height: '5rem', img_src: ElectronicImg },
+                        { title: 'Romantic', height: '5rem', img_src: RomanticImg },
+                        { title: 'Hip-Hop', height: '5rem', img_src: HipHopImg },
+                        { title: 'Global Top', height: '5rem', img_src: GlobalTopImg }
+                    ]}/>
+                </div>
+                
+                <div className={style.categ_container}>
+                    <CategoriesContainer title='Shows to try' arr={[
+                        { title: 'Old is Gold', img_src: OldMusicImg },
+                        { title: 'Pop Hits', img_src: PopMusicImg },
+                        { title: `90's Hits`, img_src: OldHitsImg }
+                    ]}/>
+                </div>
 
-            <div className={style.categ_container}>
-            <CategoriesContainer title='Your Top Mixes' arr={[
-                { title: 'Live Music', img_src: LiveMusicImg },
-                { title: 'Conan Gray', img_src: ConanGrayImg },
-                { title: `Playboi Carti`, img_src: PlayboiCartiImg }
-            ]}/>
-            </div>
-            
+                <div className={style.categ_container}>
+                    <CategoriesContainer title='Your Top Mixes' arr={[
+                        { title: 'Live Music', img_src: LiveMusicImg },
+                        { title: 'Conan Gray', img_src: ConanGrayImg },
+                        { title: `Playboi Carti`, img_src: PlayboiCartiImg }
+                    ]}/>
+                </div>
             </div>
         </div>
     );

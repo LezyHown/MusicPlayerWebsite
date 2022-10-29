@@ -39,11 +39,11 @@ function Header(){
                     {<Icon name="Library"/>}
                     <span className={style.name}>Library</span>
                 </Link>
-
-                <img className={style.song_img} alt="empty-song" src={EmptySongImg}/>
             </div>
 
             <div className={style.player_container}>
+                <img className={style.song_img} alt="song" src={EmptySongImg}/>
+                
                 <h4 className={style.song_title}>Music Playing</h4>
                 <span className={style.song_artist}>Artist</span>
                 
