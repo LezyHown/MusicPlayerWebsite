@@ -61,7 +61,7 @@ let state = {
         <SettingsIcon key={3}/>
     ],
     Library:[
-        { title: 'Liked' },
+        { title: 'Liked', icon: 'GreenHeart' },
         { title: 'Favorites', img_src: conangray_img },
         { title: 'Playlist #1', img_src: ebasshouse_img },
         { title: 'Playlist #2', img_src: playboicarti_img },

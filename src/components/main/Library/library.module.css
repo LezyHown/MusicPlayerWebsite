@@ -18,8 +18,9 @@
   padding-right: 1.5rem;
 }
 .library .__container [class*=inputBox] {
-  margin-left: 15%;
-  margin-top: 10%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 .library .__container [class*=item_container] {
   margin-top: 1.5rem;
@@ -30,7 +31,7 @@
   justify-content: center;
   margin-top: 1.5rem;
 }
-.library .__container .btn_container button {
+.library .__container .btn_container .create_btn {
   width: 170px;
   height: 54px;
   font-size: 16px;
@@ -39,4 +40,8 @@
   background-color: #00B066;
   border-radius: 10px;
   color: white;
+}
+.library .__container .btn_container .create_btn:hover {
+  background-color: rgba(0, 176, 103, 0.7490196078);
+  cursor: pointer;
 }/*# sourceMappingURL=library.module.css.map */

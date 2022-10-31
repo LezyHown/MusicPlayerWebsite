@@ -3,6 +3,8 @@
     background: linear-gradient(180deg, #000000 0%, #00B066 61.98%);
     width: 360px;
     border-radius: 20px;
+
+    z-index: 1;
 }
 
 .container{
@@ -41,10 +43,11 @@
     font-size: 16px;
     font-weight: 700;
     border-style: none;
-    background-color: black;
+    background: black;
     border-radius: 10px;
     color: white;
 
+    cursor: pointer;
     top: 5rem;
 }
 

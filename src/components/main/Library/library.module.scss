@@ -20,8 +20,9 @@
         }
 
         [class*='inputBox']{
-            margin-left: 15%;
-            margin-top: 10%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
         }
 
         [class*='item_container']{
@@ -35,7 +36,7 @@
             
             margin-top: 1.5rem;
 
-            button{
+            .create_btn{
                 width: 170px;
                 height: 54px;
                 font-size: 16px;
@@ -44,6 +45,11 @@
                 background-color: #00B066;
                 border-radius: 10px;
                 color: white;
+
+                &:hover{
+                    background-color: #00b067bf;
+                    cursor: pointer;
+                }
             }
         }
     }
