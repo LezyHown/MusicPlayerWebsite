@@ -1,4 +1,4 @@
-.categories_container .title{
+.category_container .title{
     padding-left: 1rem;
     margin-bottom: 2rem;
 }
@@ -30,7 +30,7 @@
     line-height: 0;
 }
 
-.container{
+.items_container{
     display: inline-flex;
     justify-content: space-between;
     flex-wrap: wrap;

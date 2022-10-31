@@ -49,12 +49,7 @@
             }
         }
 
-        .categ_container{
-            margin: 2.5rem 0;
-            
-        }
-
-        .big_categ_container{
+        [class*='category_container']{
             margin-top: 3rem;
         }
     }

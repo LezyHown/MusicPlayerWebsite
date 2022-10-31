@@ -5,10 +5,13 @@ body{
     padding: 0;
     background-color: black;
     color: white;
-    font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
+}
+
+*{
+    font-family: 'Montserrat';
 }
 
 .App{

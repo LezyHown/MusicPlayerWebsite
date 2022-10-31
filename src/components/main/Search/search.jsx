@@ -5,16 +5,13 @@ import style from './search.module.css';
 import Icon from '../../IconManager/IconManager';
 import MusicCategory from "../MusicCategory/MusicCategory";
 
-import rroll_img from './images/rocknroll.jpg'; 
-import rpunk_img from './images/punk.jpg'; 
-import rmetal_img from './images/metal.jpg'; 
-import efuturebass_img from './images/futurebass.jpg';
-import efuturehouse_img from './images/futurehouse.jpg';
-import ebasshouse_img from './images/basshouse.jpg';
-import djmix_img from './images/djmixes.jpg';
-import pmix_img from './images/partymix.jpg';
+function AddIcons(Categories, Name){
+    return Categories.map(c => c.map(i => i['icon'] = Name))
+}
 
-function Search(){
+function Search(props){
+    AddIcons([props.Data.Rock, props.Data.Edm, props.Data.Mixes], 'Play');
+
     return (
         <div className={style.search}>
             <div className={style.__container}>
@@ -29,29 +26,10 @@ function Search(){
                 </div>
 
                 <h3 style={{fontWeight: '500', paddingTop: '2rem'}}>Your Top Genre</h3>
-
-                <div className={style.categ_container}>
-                    <MusicCategory title="Rock" data={[
-                        { title: "Rock and Roll", img_src: rroll_img, height: "5rem", icon: <Icon name="Play"/> },
-                        { title: "Punk Rock", img_src: rpunk_img, height: "5rem", icon: <Icon name="Play"/> },
-                        { title: "Heavy Metal", img_src: rmetal_img, height: "5rem", icon: <Icon name="Play"/> },
-                    ]} border="true"/>
-                </div>
                 
-                <div className={style.categ_container}>
-                    <MusicCategory title="EDM" data={[
-                        { title: "Future Bass", img_src: efuturebass_img, height: "5rem", icon: <Icon name="Play"/> },
-                        { title: "Future House", img_src: efuturehouse_img, height: "5rem", icon: <Icon name="Play"/> },
-                        { title: "Bass House", img_src: ebasshouse_img, height: "5rem", icon: <Icon name="Play"/> },
-                    ]} border="true"/>
-                </div>
-
-                <div className={style.big_categ_container}>
-                    <MusicCategory data={[
-                        { title: "Party Mix", img_src: pmix_img, icon: <Icon name="Play"/> },
-                        { title: "DJ Mix", img_src: djmix_img, icon: <Icon name="Play"/> },
-                    ]} border="true" width="20.5rem"/>
-                </div>
+                <MusicCategory title="Rock" data={props.Data.Rock} height="5rem" border={true}/>
+                <MusicCategory title="EDM" data={props.Data.Edm} height="5rem" border={true}/>
+                <MusicCategory data={props.Data.Mixes} width="20.5rem" border={true}/>
             </div>
         </div>
     );

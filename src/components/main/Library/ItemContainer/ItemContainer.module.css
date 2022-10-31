@@ -1,0 +1,22 @@
+.item_container{
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+}
+
+.visual_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: #0E002C;
+    border-radius: 10px;
+    margin-right: 1.5rem;
+}
+
+.visual_container img{
+    width: 80px;
+    height: 80px;
+    background-size: cover;
+}

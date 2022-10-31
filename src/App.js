@@ -3,11 +3,11 @@ import './App.css';
 import Header from './components/header/header';
 import Main from './components/main/main';
 
-function App() {
+function App(props) {
   return (
       <div className="App">
           <Header/>
-          <Main/>
+          <Main Data={props.stateApp}/>
       </div>
   );
 }

@@ -1,0 +1,50 @@
+.library{
+    background-image: linear-gradient(170deg, #00D079 7%, #000000 16%, #000000 100%, #000000 100%, #000000 100%);
+    min-height: 100vh;
+    min-width: 75vw;
+    margin-bottom: 3rem;
+
+    .__container{
+        padding-top: 30px;
+        margin: 0 76px 0 57px;
+
+        .start_container{
+            display: inline-flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+
+            .title{
+                padding-right: 1.5rem;
+            }
+        }
+
+        [class*='inputBox']{
+            margin-left: 15%;
+            margin-top: 10%;
+        }
+
+        [class*='item_container']{
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn_container{
+            display: flex;
+            justify-content: center;
+            
+            margin-top: 1.5rem;
+
+            button{
+                width: 170px;
+                height: 54px;
+                font-size: 16px;
+                font-weight: 700;
+                border-style: none;
+                background-color: #00B066;
+                border-radius: 10px;
+                color: white;
+            }
+        }
+    }
+}

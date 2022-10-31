@@ -44,9 +44,6 @@
   margin-top: 0.2rem;
   filter: brightness(0%);
 }
-.search .__container .categ_container {
-  margin: 2.5rem 0;
-}
-.search .__container .big_categ_container {
+.search .__container [class*=category_container] {
   margin-top: 3rem;
 }/*# sourceMappingURL=search.module.css.map */

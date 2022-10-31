@@ -4,19 +4,19 @@ import { Route, Routes } from 'react-router-dom';
 
 import style from './main.module.css';
 
-import HomePage from './Home/home';
-import SearchPage from './Search/search';
-import LibraryPage from './Library/library';
+import Home from './Home/home';
+import Search from './Search/search';
+import Library from './Library/library';
 
-function Main(){
+function Main(props){
     return (
         <div className={style.main}>
             <Routes>
-                <Route path="/" element={<HomePage/>}/>
+                <Route path="/" element={<Home Data={props.Data}/>}/>
                 
-                <Route path="HomePage" element={<HomePage/>}/>
-                <Route path="SearchPage" element={<SearchPage/>}/>
-                <Route path="LibraryPage" element={<LibraryPage/>}/>
+                <Route path="Home" element={<Home Data={props.Data}/>}/>
+                <Route path="Search" element={<Search Data={props.Data}/>}/>
+                <Route path="Library" element={<Library Data={props.Data}/>}/>
             </Routes>
         </div>
     );

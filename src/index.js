@@ -4,9 +4,11 @@ import App from './App';
 
 import { BrowserRouter } from 'react-router-dom';
 
+import state from './components/main/Redux/state';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
-    <App/>
+    <App stateApp={state}/>
   </BrowserRouter>
 );

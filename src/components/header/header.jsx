@@ -22,19 +22,19 @@ function Header(){
     return (
         <div className={style.header}>
             <div className={style.navigation_container}>
-                <Link to='/HomePage' className={style.nav_link}>
+                <Link to='/Home' className={style.nav_link}>
                     {/Home/.test(location.pathname) || location.pathname.length === 1 ? rect_active_page : ''}
                     {<Icon name="Home"/>}
                     <span className={style.name}>Home</span>
                 </Link>
 
-                <Link to='/SearchPage' className={style.nav_link}>
+                <Link to='/Search' className={style.nav_link}>
                     {/Search/.test(location.pathname) ? rect_active_page : ''}
                     {<Icon name="Search"/>}
                     <span className={style.name}>Search</span>
                 </Link>
 
-                <Link to='/LibraryPage' className={style.nav_link}>
+                <Link to='/Library' className={style.nav_link}>
                     {/Library/.test(location.pathname) ? rect_active_page : ''}
                     {<Icon name="Library"/>}
                     <span className={style.name}>Library</span>
