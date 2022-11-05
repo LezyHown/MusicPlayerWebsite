@@ -5,7 +5,10 @@ import style from './home.module.css';
 import MusicCategory from "../MusicCategory/MusicCategory";
 
 function Home(props){
-    props.Data.HomeCategories.filter(categ => categ.title === 'Library').map(c => c['icon'] = 'Circle');
+    props.Data.HomeCategories.filter(categ => categ.title === 'Library').map(c => { 
+        c['icon'] = 'Circle';
+        c['link'] = '/Library';
+    });
     
     return (
         <div className={style.home}>
@@ -18,7 +21,7 @@ function Home(props){
                     </div>
                 </div>
 
-                <MusicCategory data={props.Data.HomeCategories}  height='5rem'/>
+                <MusicCategory data={props.Data.HomeCategories} height='5rem'/>
                 <MusicCategory data={props.Data.HomeCategories2} title='Shows to try'/>
                 <MusicCategory data={props.Data.HomeCategories3} title='Your Top Mixes'/>
             </div>

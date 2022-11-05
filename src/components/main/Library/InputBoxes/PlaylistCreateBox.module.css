@@ -70,3 +70,28 @@
     border-style: none;
     margin-bottom: 7rem;
 }
+
+.container .tooltip{
+    opacity: 0;
+    position: absolute;
+    display: inline-block;
+    width: 10rem;
+    background: rgba(255, 0, 0, 0.13);
+    color: #fff;
+    text-align: center;
+    border-radius: 1rem;
+    padding: 5px 1rem;
+    top: 4rem;
+    left: 90%;
+}
+
+.container .tooltip::after{
+    content: '';
+    position: absolute;
+    top: 2.5rem;
+    right: 102%;
+    margin-top: -5px;
+    border-width: 1.7rem;
+    border-style: solid;
+    border-color: transparent rgba(117, 16, 16, 0.451) transparent transparent;
+}

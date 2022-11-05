@@ -4,6 +4,7 @@
 
     *{
         font-weight: 700;
+        transition: all 0.20s ease-out;
     }
 
     .__container{
@@ -20,6 +21,12 @@
 
         .icons_container > *{
             margin-right: 19px;
+
+            &:hover{
+                cursor: pointer;
+                filter: invert(0.19) sepia(0.5) saturate(8.9) hue-rotate(277.2deg) brightness(0.88);
+                width: 101%;
+            }
         }
 
         .icons_container{

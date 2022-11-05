@@ -1,6 +1,7 @@
 .progressbar{
     background-color: black;
     border-radius: 17px;
+    transition: all 0.2s ease-in-out;
 }
 
 .progressbar .progress{
@@ -20,4 +21,10 @@
 
 .buttons_container svg{
     margin: 1.5rem 1rem;
+    transition: all 0.15s ease-in-out;
+}
+
+.buttons_container svg:hover{
+    cursor: pointer;
+    filter: invert(0.3) sepia(1) saturate(15) hue-rotate(97.2deg) brightness(0.65);
 }

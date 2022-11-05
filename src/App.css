@@ -17,3 +17,8 @@ body{
 .App{
     display: inline-flex;
 }
+
+[class='link']{
+    text-decoration: none;
+    color: white;
+}

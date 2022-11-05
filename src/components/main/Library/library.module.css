@@ -8,6 +8,10 @@
   padding-top: 30px;
   margin: 0 76px 0 57px;
 }
+.library .__container .link {
+  text-decoration: none;
+  color: white;
+}
 .library .__container .start_container {
   display: inline-flex;
   width: 100%;
@@ -16,6 +20,13 @@
 }
 .library .__container .start_container .title {
   padding-right: 1.5rem;
+}
+.library .__container .start_container svg {
+  transition: all 0.2s ease-in-out;
+}
+.library .__container .start_container svg:hover {
+  filter: drop-shadow(0 0.05rem 0.05rem white);
+  cursor: pointer;
 }
 .library .__container [class*=inputBox] {
   left: 50%;
@@ -40,6 +51,7 @@
   background-color: #00B066;
   border-radius: 10px;
   color: white;
+  transition: all 0.1s ease-in-out;
 }
 .library .__container .btn_container .create_btn:hover {
   background-color: rgba(0, 176, 103, 0.7490196078);

@@ -7,6 +7,7 @@ import ItemContainer from "./ItemContainer/ItemContainer";
 import AwayListener from "@mui/base/ClickAwayListener";
 
 import style from "./library.module.css";
+import { Link } from "react-router-dom";
 
 function Library(props) {
   let index = 1;
@@ -18,18 +19,21 @@ function Library(props) {
       <div className={style.__container}>
         <div className={style.start_container}>
           <h3 className={style.title}>Your Library</h3>
-          <Icon name="Search" />
+          
+          <Link to="/Search">
+            <Icon name="Search"/>
+          </Link>
         </div>
 
         {libraryItems.map((i) =>
           i.hasOwnProperty("icon") ? (
-            <ItemContainer
-              key={++index}
-              title={i.title}
-              icon={<Icon name={i.icon} />}
-            />
+            <Link to="/Tracklist" className="link">
+              <ItemContainer key={++index} title={i.title} icon={<Icon name={i.icon}/>}/>
+            </Link>
           ) : (
-            <ItemContainer key={++index} title={i.title} img_src={i.img_src} />
+            <Link to="/Tracklist" className="link">
+              <ItemContainer key={++index} title={i.title} img_src={i.img_src}/>
+            </Link>
           )
         )}
 
@@ -43,12 +47,12 @@ function Library(props) {
               Create Playlist
             </button>
 
-            {createBoxVisible ? (
+            {createBoxVisible && (
               <PlaylistCreateBox
                 addItem={(item) => setItems([...libraryItems, item])}
                 HideFunc={() => setCreateBoxVisible(false)}
               />
-            ) : null}
+            )} 
           </div>
         </AwayListener>
       </div>

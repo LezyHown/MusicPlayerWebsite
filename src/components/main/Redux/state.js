@@ -64,8 +64,12 @@ let state = {
         { title: 'Liked', icon: 'GreenHeart' },
         { title: 'Favorites', img_src: conangray_img },
         { title: 'Playlist #1', img_src: ebasshouse_img },
-        { title: 'Playlist #2', img_src: playboicarti_img },
-        { title: 'Playlist #3', img_src: djmix_img },
+    ],
+    Tracks:[
+        { title: 'Baby Alone', subtitle: 'Just Subtitle TEXT', img: romantic_img },
+        { title: 'Guitar Love', subtitle: 'Just Subtitle TEXT #2', img: livemusic_img },
+        { title: 'Forever in my mind', subtitle: 'Just Subtitle #3', img: conangray_img },
+        { title: 'Superstar', subtitle: 'Just Subtitle TEXT #4', img: rroll_img },
     ]
 };
 

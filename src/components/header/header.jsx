@@ -35,7 +35,7 @@ function Header(){
                 </Link>
 
                 <Link to='/Library' className={style.nav_link}>
-                    {/Library/.test(location.pathname) ? rect_active_page : ''}
+                    {/Library|Tracklist/.test(location.pathname) ? rect_active_page : ''}
                     {<Icon name="Library"/>}
                     <span className={style.name}>Library</span>
                 </Link>

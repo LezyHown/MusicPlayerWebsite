@@ -12,13 +12,14 @@ function ItemContainer(props) {
             }
             </div>
             
-            <span className={style.title}>
-                {props.title}
-            </span>
-
-            <span className={style.second_title}>
-                {props.second_title}
-            </span>
+            <div className={style.titles_container} style={{alignSelf: props.isTrack && 'flex-end'}}>
+                <span className={style.title}>
+                    {props.title}
+                </span>
+                <span className={style.subtitle}>
+                    {props.subtitle}
+                </span>
+            </div>
         </div>
     )
 }

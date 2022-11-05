@@ -7,6 +7,11 @@
     .__container{
         padding-top: 30px;
         margin: 0 76px 0 57px;
+     
+        .link{
+            text-decoration: none;
+            color: white;
+        }
 
         .start_container{
             display: inline-flex;
@@ -16,6 +21,15 @@
 
             .title{
                 padding-right: 1.5rem;
+            }
+
+            svg{
+                transition: all 0.2s ease-in-out;
+            }
+
+            svg:hover{
+                filter: drop-shadow(0 0.05rem 0.05rem white);
+                cursor: pointer;
             }
         }
 
@@ -45,6 +59,8 @@
                 background-color: #00B066;
                 border-radius: 10px;
                 color: white;
+                
+                transition: all 0.1s ease-in-out;
 
                 &:hover{
                     background-color: #00b067bf;

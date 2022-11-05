@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Icon from '../../IconManager/IconManager';
 
 import style from './MusicCategory.module.css';
@@ -25,24 +26,26 @@ function MusicCategory(props)
     isShort = props.height !== undefined;
 
     let Items = props.data.map(item => 
-        <div key={item.title} className={style.category_item} 
-            style={{
-                backgroundImage: `url(${ item.img_src })`, 
-                height: props.height ?? '17rem', 
-                width: props.width ?? '17rem', 
-                alignItems: isShort ? 'center' : 'flex-end'
-            }}>
-            {
-                item.icon !== undefined ?
-                <div className={style.icon} style={{ marginBottom: !isShort ? '0.5rem' : '0' }}>
-                    <Icon name={item.icon}/>
-                </div> : ''
-            }
-            <span className={style.title} style={{ 
-                textShadow: props.border ? borderText : '' }}>
-                {item.title}
-            </span>
-        </div>
+        <Link to={item.link} style={{textDecoration: 'none', color: 'white' }}>
+            <div key={item.title} className={style.category_item} 
+                style={{
+                    backgroundImage: `url(${ item.img_src })`, 
+                    height: props.height ?? '17rem', 
+                    width: props.width ?? '17rem', 
+                    alignItems: isShort ? 'center' : 'flex-end'
+                }}>
+                {
+                    item.icon !== undefined ?
+                    <div className={style.icon} style={{ marginBottom: !isShort ? '0.5rem' : '0' }}>
+                        <Icon name={item.icon}/>
+                    </div> : ''
+                }
+                <span className={style.title} style={{ 
+                    textShadow: props.border ? borderText : '' }}>
+                    {item.title}
+                </span>
+            </div>
+        </Link>
     );
     
     return (
