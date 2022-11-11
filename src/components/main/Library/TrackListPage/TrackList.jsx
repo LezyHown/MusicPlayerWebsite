@@ -6,7 +6,7 @@ import style from './TrackList.module.css';
 import Track from '../ItemContainer/ItemContainer';
 
 function TrackList(props) {
-    let Tracks = props.Data.Tracks;
+    let Tracks = props.Data;
     
     return (
       <div className={style.track_list}>

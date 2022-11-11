@@ -4,11 +4,12 @@ import style from './PlaylistCreateBox.module.css';
 
 import $ from 'jquery';
 
-function AddNewPlaylistItem(addItem, hideSelf) {
-  let pTitle = $(`input`).val();
+function AddNewPlaylistItem(addItem, hideSelf, inputs) {
+  if (inputs.title.length >= 3) {
+    //Создание плейлиста
+    inputs.img.length >= 6 ? addItem({ title: inputs.title, img_src: inputs.img }) : 
+                             addItem({ title: inputs.title, icon: null });
 
-  if (pTitle.length >= 3) {
-    addItem({ title: `${pTitle}`, icon: null });
     hideSelf();
   } else {
     let tooltip = $(`[class*='tooltip']`),
@@ -24,13 +25,18 @@ function AddNewPlaylistItem(addItem, hideSelf) {
 }
 
 function PlaylistCreateBox(props) {
-    let Add = () => AddNewPlaylistItem(props.addItem, props.HideFunc);
+    let inputTitle = React.createRef(), inputImg = React.createRef();
+    
+    let Add = () => AddNewPlaylistItem(props.addItem, props.HideFunc, 
+      { title: inputTitle.current.value, img: inputImg.current.value }
+    );
 
     return (
         <div className={style.inputBox} onKeyDown={(e) => e.key === 'Enter' ? Add() : null}>
             <div className={style.container}>
-                <input placeholder="Playlist Name"/>
+                <input placeholder="Playlist Name" ref={inputTitle}/>
                 <span className={style.tooltip}>Имя должно быть длинее 2-х символов!</span>
+                <input placeholder="Image Link" ref={inputImg}/>
                 <hr/>
                 <button type="button" onClick={() => Add()}>
                     Create Playlist

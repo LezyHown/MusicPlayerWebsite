@@ -8,6 +8,7 @@ import Home from './Home/home';
 import Search from './Search/search';
 import Library from './Library/library';
 import TrackList from "./Library/TrackListPage/TrackList";
+import Settings from "./Home/Settings/settings";
 
 function Main(props){
     return (
@@ -15,10 +16,11 @@ function Main(props){
             <Routes>
                 <Route path="/" element={<Home Data={props.Data}/>}/>
                 
-                <Route path="Home" element={<Home Data={props.Data}/>}/>
-                <Route path="Search" element={<Search Data={props.Data}/>}/>
-                <Route path="Library" element={<Library Data={props.Data}/>}/>
-                <Route path="Tracklist" element={<TrackList Data={props.Data}/>}></Route>
+                <Route path="Home" element={<Home Data={props.Data.Home}/>}/>
+                <Route path="Search" element={<Search Data={props.Data.Search}/>}/>
+                <Route path="Library" element={<Library Data={props.Data.Library}/>}/>
+                <Route path="Tracklist" element={<TrackList Data={props.Data.Tracks}/>}></Route>
+                <Route path="Home/Settings" element={<Settings Data={props.Data.Settings}/>}/>
             </Routes>
         </div>
     );

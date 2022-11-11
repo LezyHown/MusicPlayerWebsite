@@ -1,7 +1,6 @@
 .search {
   background-image: linear-gradient(170deg, #0400D0 1%, #000000 20%, #000000 100%, #000000 100%, #000000 100%);
   margin-bottom: 3rem;
-  width: calc(100vw - 37%);
 }
 @media (max-width: 650px) {
   .search {

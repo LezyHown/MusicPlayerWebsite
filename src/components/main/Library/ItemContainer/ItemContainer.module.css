@@ -3,26 +3,25 @@
     align-items: center;
     width: 100%;
     border-radius: 50px;
+    transition: all 0.3s ease-out;
 }
 
 .item_container *{
-    transition: all 0.20s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 .item_container:hover{
     cursor: pointer;
+    transform: rotate3d(0, 1, 0, 10deg);
 }
 
-.item_container:hover img{
-    width: 105%;
-    height: 105%;
-    border-radius: 4rem;
-    border-bottom: 1.5px solid rgba(255, 255, 255, 0.206);
-}
-
-.item_container:hover .visual_container{
+.item_container:hover .visual_container, .item_container:hover img{
     border-radius: 5rem;
-    border-bottom: 1.5px solid rgba(255, 255, 255, 0.206);
+}
+
+.item_container:hover [class*='title']{
+    color: white;
+    transition: all 0.4s ease-out;
 }
 
 .visual_container{
@@ -52,6 +51,7 @@
     font-weight: 400;
     font-size: 24px;
     line-height: 29px;
+    color: rgba(255, 255, 255, 0.815);
 }
 
 .titles_container .subtitle{
@@ -63,4 +63,5 @@
     font-weight: 300;
     font-size: 16px;
     line-height: 20px;
+    color: rgba(255, 255, 255, 0.646);
 }

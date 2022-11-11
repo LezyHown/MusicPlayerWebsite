@@ -1,6 +1,5 @@
 .track_list {
   background-image: linear-gradient(170deg, #00D079 4%, #000000 10%, #000000 100%, #000000 100%, #000000 100%);
-  min-height: 100vh;
 }
 .track_list .__container {
   padding-top: 30px;

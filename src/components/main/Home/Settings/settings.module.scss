@@ -1,0 +1,109 @@
+.settings{
+    background-image: linear-gradient(170deg, #A700D0 4%, #000000 18%, #000000 100%, #000000 100%, #000000 100%);
+
+    .__container{
+       padding-top: 30px;
+       margin: 0 76px 0 57px;
+
+       *{
+        transition: all 0.10s ease-in;
+       }
+
+       .title, [class*='header']{
+            font-weight: 600;
+            font-size: 24px;
+       }
+    
+       .start_container{
+           display: inline-flex;
+           width: 100%;
+           align-items: center;
+           margin-bottom: 1rem;
+
+           a{ width: 0; }
+           
+           .title_container{
+                margin-left: 0.3rem;
+               display: inline-flex;
+               align-items: center;
+
+               .title{
+                margin-left: 0.25rem;
+               }
+           }
+
+           [class='Back'] svg{
+                position: relative;
+                right: 1rem;
+                top: -2rem;
+           }
+        }
+
+        .subscr_block{
+            display: inline-flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 3rem;
+
+            .term_header{
+                font-weight: 400;
+                font-size: 24px;
+            }
+        }     
+        
+        .subcontainer{
+            margin-top: 1.5rem;
+            margin-bottom: 2.5rem;
+
+            [class='Hr'] svg{
+                position: relative;
+                right: 3%;
+            }
+
+            .block{
+                display: inline-flex;
+                justify-content: space-between;
+                width: 100%;
+                margin-top: 1rem;
+            }
+        }
+
+        .bottcontainer{
+            display: flex;
+            flex-direction: column;
+
+            .title, .separ_header{
+                display: block;
+                margin-bottom: 1.2rem;
+            }
+
+            .separ_header{
+                margin-top: 1.2rem;
+            }
+        }
+
+        .btn_container{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            margin-top: 100px;
+        }
+
+        .logout{
+            cursor: pointer;
+            font-weight: 400;
+            font-size: 24px;
+            width: 176px;
+            height: 64px;
+            border: none;
+            background: #0E002C;
+            border-radius: 10px;
+            color: white;
+
+            &:hover{
+                background: #18014b;
+                filter: drop-shadow(0 0 0.1rem #1e005e);
+            }
+        }
+    }
+}

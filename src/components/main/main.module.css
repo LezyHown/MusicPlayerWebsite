@@ -1,9 +1,11 @@
 .main{
     transition: all 0.3s ease-in-out;
+    min-width: calc(100vw - 346px);
 }
 
 ::-webkit-scrollbar {
     width: 5.5px;
+    max-height: 3px;
 }
 
 ::-webkit-scrollbar-track{

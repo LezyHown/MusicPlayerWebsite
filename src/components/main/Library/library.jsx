@@ -10,9 +10,9 @@ import style from "./library.module.css";
 import { Link } from "react-router-dom";
 
 function Library(props) {
-  let index = 1;
   const [createBoxVisible, setCreateBoxVisible] = React.useState(false);
-  const [libraryItems, setItems] = React.useState(props.Data.Library);
+  
+  let LibraryItems = props.Data.data;
 
   return (
     <div className={style.library}>
@@ -25,33 +25,25 @@ function Library(props) {
           </Link>
         </div>
 
-        {libraryItems.map((i) =>
-          i.hasOwnProperty("icon") ? (
+        {LibraryItems.map((i, index = 0) => i.hasOwnProperty("icon") ? 
+        (
             <Link to="/Tracklist" className="link">
               <ItemContainer key={++index} title={i.title} icon={<Icon name={i.icon}/>}/>
             </Link>
-          ) : (
+        ):(
             <Link to="/Tracklist" className="link">
               <ItemContainer key={++index} title={i.title} img_src={i.img_src}/>
             </Link>
-          )
-        )}
+        ))}
 
         <AwayListener onClickAway={() => setCreateBoxVisible(false)}>
           <div className={style.btn_container}>
-            <button
-              type="button"
-              className={style.create_btn}
-              onClick={() => setCreateBoxVisible(true)}
-            >
+            <button type="button" className={style.create_btn} onClick={() => setCreateBoxVisible(true)}>
               Create Playlist
             </button>
 
             {createBoxVisible && (
-              <PlaylistCreateBox
-                addItem={(item) => setItems([...libraryItems, item])}
-                HideFunc={() => setCreateBoxVisible(false)}
-              />
+              <PlaylistCreateBox addItem={(item) => props.Data.AddPlaylist(item)} HideFunc={() => setCreateBoxVisible(false)}/>
             )} 
           </div>
         </AwayListener>

@@ -25,9 +25,9 @@ function MusicCategory(props)
 {
     isShort = props.height !== undefined;
 
-    let Items = props.data.map(item => 
-        <Link to={item.link} style={{textDecoration: 'none', color: 'white' }}>
-            <div key={item.title} className={style.category_item} 
+    let Items = props.data.map((item, index = 1) => 
+        <Link to={item.link} className="link" key={index++}>
+            <div className={style.category_item} 
                 style={{
                     backgroundImage: `url(${ item.img_src })`, 
                     height: props.height ?? '17rem', 

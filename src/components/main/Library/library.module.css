@@ -8,10 +8,6 @@
   padding-top: 30px;
   margin: 0 76px 0 57px;
 }
-.library .__container .link {
-  text-decoration: none;
-  color: white;
-}
 .library .__container .start_container {
   display: inline-flex;
   width: 100%;
