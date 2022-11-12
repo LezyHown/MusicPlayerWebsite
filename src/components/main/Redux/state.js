@@ -86,18 +86,33 @@ let state = {
     },
     Library:{
         data: [
-            { title: 'Liked', icon: 'GreenHeart' },
-            { title: 'Favorites', img_src: conangray_img },
+            { title: 'Liked', icon: 'GreenHeart', id: 'personal' },
+            { title: 'Favorites', img_src: conangray_img, id: 'favorites' },
             { title: 'Playlist #1', img_src: ebasshouse_img }
         ],
         AddPlaylist
     },
-    Tracks:[
-        { title: 'Baby Alone', subtitle: 'Just Subtitle TEXT', img: romantic_img },
-        { title: 'Guitar Love', subtitle: 'Just Subtitle TEXT #2', img: livemusic_img },
-        { title: 'Forever in my mind', subtitle: 'Just Subtitle #3', img: conangray_img },
-        { title: 'Superstar', subtitle: 'Just Subtitle TEXT #4', img: rroll_img },
-    ],
+    Tracks:{ 
+        'personal': { 
+            title: 'Liked', 
+            data:[ 
+                { title: 'Baby Alone', subtitle: 'In a mi a ante volutpat', img: romantic_img },
+                { title: 'Guitar Love', subtitle: 'Mauris volutpat dolor', img: livemusic_img },
+                { title: 'Forever in my mind', subtitle: 'Praesent malesuada lacus', img: conangray_img },
+                { title: 'Superstar', subtitle: 'Vestibulum ut nisi aliquet', img: rroll_img }
+            ]
+        },
+        'favorites': { 
+            title: 'Favorites', 
+            data:[ 
+                { title: 'Afro Americanec', subtitle: `I'm from India!`, img: livemusic_img },
+                { title: 'Forever in my mind', subtitle: 'Praesent malesuada lacus', img: conangray_img },
+                { title: 'Superstar', subtitle: 'Vestibulum ut nisi aliquet', img: rroll_img },
+                { title: 'Lambo', subtitle: 'Driving every day', img: ebasshouse_img },
+                { title: 'Hear that little things', subtitle: 'Slime digital', img: rpunk_img },
+            ]
+        }
+    },
     Settings:{
         data: { notif: 'Enable', quality: 'Ultra High', audio3D: true, saver: false },
         setNotif, setQuality, setAudio3D, setSaver

@@ -14,12 +14,12 @@ function Main(props){
     return (
         <div className={style.main}>
             <Routes>
-                <Route path="/" element={<Home Data={props.Data}/>}/>
+                <Route path="/"  element={<Home Data={props.Data.Home}/>}/>
                 
                 <Route path="Home" element={<Home Data={props.Data.Home}/>}/>
                 <Route path="Search" element={<Search Data={props.Data.Search}/>}/>
                 <Route path="Library" element={<Library Data={props.Data.Library}/>}/>
-                <Route path="Tracklist" element={<TrackList Data={props.Data.Tracks}/>}></Route>
+                <Route path="Tracklist/:id" element={<TrackList Data={props.Data.Tracks}/>}></Route>
                 <Route path="Home/Settings" element={<Settings Data={props.Data.Settings}/>}/>
             </Routes>
         </div>

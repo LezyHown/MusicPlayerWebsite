@@ -25,14 +25,15 @@ function Library(props) {
           </Link>
         </div>
 
-        {LibraryItems.map((i, index = 0) => i.hasOwnProperty("icon") ? 
+        {LibraryItems.map((playlist, index = 0) => 
+          playlist.hasOwnProperty("icon") ? 
         (
-            <Link to="/Tracklist" className="link">
-              <ItemContainer key={++index} title={i.title} icon={<Icon name={i.icon}/>}/>
+            <Link to={`/Tracklist/${playlist.id}`} className="link">
+              <ItemContainer key={++index} title={playlist.title} icon={<Icon name={playlist.icon}/>}/>
             </Link>
         ):(
-            <Link to="/Tracklist" className="link">
-              <ItemContainer key={++index} title={i.title} img_src={i.img_src}/>
+            <Link to={`/Tracklist/${playlist.id}`} className="link">
+              <ItemContainer key={++index} title={playlist.title} img_src={playlist.img_src}/>
             </Link>
         ))}
 

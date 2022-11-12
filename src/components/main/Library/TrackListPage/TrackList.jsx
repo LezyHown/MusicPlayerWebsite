@@ -1,13 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Icon from "../../../IconManager/IconManager";
 
 import style from './TrackList.module.css';
 import Track from '../ItemContainer/ItemContainer';
 
 function TrackList(props) {
-    let Tracks = props.Data;
-    
+    const {id} = useParams();
+
+    let playlist = props.Data[id] ?? { data: [] }, isExist = playlist.data.length > 0;
+
     return (
       <div className={style.track_list}>
         <div className={style.__container}>
@@ -15,7 +17,7 @@ function TrackList(props) {
             <Link to="/Library">
               <Icon name="Back" />
             </Link>
-            <h3 className={style.title}>Liked</h3>
+            <h3 className={style.title}>{isExist ? playlist.title : 'No title'}</h3>
           </div>
 
           <div className={style.controls}>
@@ -28,24 +30,15 @@ function TrackList(props) {
           </div>
 
           <div className={style.track_container}>
-            {[
-              Tracks.map((t) => (
-                <Track
-                  isTrack={true}
-                  title={t.title}
-                  img_src={t.img}
-                  subtitle={t.subtitle}
-                />
-              )),
-              Tracks.map((t) => (
-                <Track
-                  isTrack={true}
-                  title={t.title}
-                  img_src={t.img}
-                  subtitle={t.subtitle}
-                />
-              )),
-            ]}
+            { isExist ? 
+              playlist.data.map((t) => (
+                  <Track
+                    isTrack={true}
+                    title={t.title}
+                    img_src={t.img}
+                    subtitle={t.subtitle}
+                  />
+              )) : <h1 className={style.title}>Playlist doesn't exist...</h1>}
           </div>
         </div>
       </div>

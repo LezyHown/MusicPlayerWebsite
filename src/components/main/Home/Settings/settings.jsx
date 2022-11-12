@@ -46,7 +46,6 @@ function Settings(props){
                     <span className={style.title}>Notification</span>
                     { React.useMemo(() => 
                         <RadioButtons
-                            Key='Notifications'
                             names={ ['Enable', 'Disable'] } 
                             setCurrent={(name) => { 
                                 settings.setNotif(name)
@@ -60,8 +59,7 @@ function Settings(props){
 
                     <span className={style.title}>Music Quality</span>
                     { React.useMemo(() => 
-                        <RadioButtons 
-                            Key='MusicQuality'
+                        <RadioButtons
                             names={ ['Low', 'Medium', 'High', 'Ultra High'] } 
                             setCurrent={(name) => { 
                                 settings.setQuality(name)
