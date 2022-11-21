@@ -26,20 +26,15 @@ export function AddPlaylist(playlist){
     state.Library.data.push(playlist);
 }
 
-export function setNotif(value){
-    state.Settings.data.notif = value;
-}
+export function RemovePlaylist(id){
+    let arr = state.Library.data;
 
-export function setQuality(value){
-    state.Settings.data.quality = value;
-}
-
-export function setSaver(value){
-    state.Settings.data.saver = value;
-}
-
-export function setAudio3D(value){
-    state.Settings.data.audio3D = value;
+    let index = arr.indexOf(arr.filter(item => item.id.includes(id ?? ''))[0]);
+    
+    if(index >= 0)
+        arr.splice(index, 1);
+        
+    return arr;
 }
 
 let state = {
@@ -49,7 +44,7 @@ let state = {
         ],
         Categories: [
             [
-                { title: `Library` },
+                { title: `Library`, icon: 'Circle', link: '/Library' },
                 { title: `Acoustic`, img_src: acoustic_img },
                 { title: `Electronic`, img_src: electronic_img },
                 { title: `Romantic`, img_src: romantic_img },
@@ -88,9 +83,9 @@ let state = {
         data: [
             { title: 'Liked', icon: 'GreenHeart', id: 'personal' },
             { title: 'Favorites', img_src: conangray_img, id: 'favorites' },
-            { title: 'Playlist #1', img_src: ebasshouse_img }
+            { title: 'Playlist #1', img_src: ebasshouse_img, id: 'Playlist #1' }
         ],
-        AddPlaylist
+        AddPlaylist, RemovePlaylist
     },
     Tracks:{ 
         'personal': { 
@@ -105,19 +100,14 @@ let state = {
         'favorites': { 
             title: 'Favorites', 
             data:[ 
-                { title: 'Afro Americanec', subtitle: `I'm from India!`, img: livemusic_img },
-                { title: 'Forever in my mind', subtitle: 'Praesent malesuada lacus', img: conangray_img },
-                { title: 'Superstar', subtitle: 'Vestibulum ut nisi aliquet', img: rroll_img },
-                { title: 'Lambo', subtitle: 'Driving every day', img: ebasshouse_img },
-                { title: 'Hear that little things', subtitle: 'Slime digital', img: rpunk_img },
+                { title: 'Afro Americanec', subtitle: `I'm from India!`, img: 'https://i.pinimg.com/564x/a1/28/13/a128130ccffe1aec7a647e91ed33f2d4.jpg' },
+                { title: 'Forever in my mind', subtitle: 'Praesent malesuada lacus', img: 'https://i.pinimg.com/564x/35/09/64/350964b9d0f8e073835d6923f12177ae.jpg' },
+                { title: 'Superstar', subtitle: 'Vestibulum ut nisi aliquet', img: 'https://i.pinimg.com/564x/aa/d2/6d/aad26d7ca5b437c7d2a3a9da4870a421.jpg' },
+                { title: 'Lambo', subtitle: 'Driving every day', img: 'https://i.pinimg.com/736x/4c/3a/a7/4c3aa7a7319bb22f8e2b33626982480b.jpg' },
+                { title: 'Hear that little things', subtitle: 'Slime digital', img: 'https://i.pinimg.com/564x/c2/22/b5/c222b5bf1d10af0e507a9c686eec14e2.jpg' },
             ]
         }
-    },
-    Settings:{
-        data: { notif: 'Enable', quality: 'Ultra High', audio3D: true, saver: false },
-        setNotif, setQuality, setAudio3D, setSaver
-    },
+    }
 };
-
 
 export default state;

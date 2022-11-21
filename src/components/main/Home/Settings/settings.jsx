@@ -1,15 +1,21 @@
-import React, { useMemo } from "react";
+import React from "react";
 
+import darkTheme from './style/settings.module.css';
+import whiteTheme from './style/settings_white.module.css';
 import { Link } from "react-router-dom";
+
 import Icon from "../../../IconManager/IconManager";
 import RadioButtons from "./RadioButtons/RadioButtons";
-
-import style from './settings.module.css';
 import ToogleSwitch from "./ToogleSwitch/toogleswitch";
 
-function Settings(props){
-    let settings = props.Data;
-    const [update, setUpdate] = React.useState('');
+import ContextData from '../../Redux/context';
+
+function Settings(){
+    const [style, setStyle] = React.useState(darkTheme);
+    const data = React.useContext(ContextData);
+    const [update, setUpdate] = React.useState(false);
+
+    React.useMemo(() => setStyle(!data.settings.theme ? darkTheme : whiteTheme), [data.settings.theme]);
 
     return (
         <div className={style.settings}>
@@ -32,42 +38,44 @@ function Settings(props){
 
                 <div className={style.subcontainer}>
                     <div className={style.block}>
-                        <span className={style.title}>Data Saver</span>
-                        <ToogleSwitch checked={settings.data.saver} setChange={(value) => settings.setSaver(value)}/>
+                        <span className={style.title}>{data.settings.theme ? 'White' : 'Dark'} Theme</span>
+                        <ToogleSwitch checked={data.settings.theme} setChange={(value) => {
+                            data.settings.theme = value
+                            setUpdate(!update)
+                        }}/>
                     </div>
                     <Icon name='Hr'/>
                     <div className={style.block}>
                         <span className={style.title}>3D Audio</span>
-                        <ToogleSwitch checked={settings.data.audio3D} setChange={(value) => settings.setAudio3D(value)}/>
+                        <ToogleSwitch checked={data.settings.audio3D} 
+                        setChange={(value) => {
+                            data.settings.audio3D = value;
+                            setUpdate(!update)
+                        }}/>
                     </div>
                 </div>
 
                 <div className={style.bottcontainer}>
                     <span className={style.title}>Notification</span>
-                    { React.useMemo(() => 
-                        <RadioButtons
-                            names={ ['Enable', 'Disable'] } 
-                            setCurrent={(name) => { 
-                                settings.setNotif(name)
-                                setUpdate(name)
-                            }} 
-                            default={settings.data.notif}
-                        />, [settings.data.notif]) 
-                    }
-
+                    <RadioButtons
+                        names={ ['Enable', 'Disable'] } 
+                        setCurrent={(name) => { 
+                            data.settings.notif = name;
+                            setUpdate(!update)
+                        }} 
+                        default={data.settings.notif}
+                    />
                     <span className={style.separ_header}>Storage</span>
 
                     <span className={style.title}>Music Quality</span>
-                    { React.useMemo(() => 
-                        <RadioButtons
-                            names={ ['Low', 'Medium', 'High', 'Ultra High'] } 
-                            setCurrent={(name) => { 
-                                settings.setQuality(name)
-                                setUpdate(name)
-                            }} 
-                            default={settings.data.quality}
-                        />, [settings.data.quality]) 
-                    }
+                    <RadioButtons
+                        names={ ['Low', 'Medium', 'High', 'Ultra High'] } 
+                        setCurrent={(name) => { 
+                            data.settings.quality = name;
+                            setUpdate(!update)
+                        }} 
+                        default={data.settings.quality}
+                    />
                 </div>
                 
                 <div className={style.btn_container}>

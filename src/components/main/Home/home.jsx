@@ -1,22 +1,23 @@
 import React from "react";
 
-import style from "./home.module.css";
+import darkTheme from "./style/home.module.css";
+import whiteTheme from './style/home_white.module.css';
 
 import MusicCategory from "../MusicCategory/MusicCategory";
 import { Link } from "react-router-dom";
+import ContextData from "../Redux/context";
 
-function Home(props) {
-  props.Data.Categories[0].filter((categ) => categ.title === "Library").map(c => {
-      c["icon"] = "Circle";
-      c["link"] = "/Library";
-    }
-  );
+export default function Home(props) {
+  const [style, setStyle] = React.useState(darkTheme);
+  const data = React.useContext(ContextData);
 
-  let HomeIcons =  props.Data['Icons'].map((item, index = 1) => 
+  const HomeIcons =  props.Data['Icons'].map((item, index = 1) => 
       <Link to={item.link} key={index++}>
         {item.icon}
       </Link>
   );
+
+  React.useMemo(() => setStyle(!data.settings.theme ? darkTheme : whiteTheme), [data.settings.theme]);
 
   return (
     <div className={style.home}>
@@ -36,5 +37,3 @@ function Home(props) {
     </div>
   );
 }
-
-export default Home;

@@ -20,7 +20,7 @@ function Main(props){
                 <Route path="Search" element={<Search Data={props.Data.Search}/>}/>
                 <Route path="Library" element={<Library Data={props.Data.Library}/>}/>
                 <Route path="Tracklist/:id" element={<TrackList Data={props.Data.Tracks}/>}></Route>
-                <Route path="Home/Settings" element={<Settings Data={props.Data.Settings}/>}/>
+                <Route path="Home/Settings" element={<Settings/>}/>
             </Routes>
         </div>
     );

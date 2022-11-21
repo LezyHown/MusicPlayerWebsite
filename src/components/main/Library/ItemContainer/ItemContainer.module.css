@@ -6,6 +6,13 @@
     transition: all 0.3s ease-out;
 }
 
+.link{
+    display: inline-flex;
+    width: 100%;
+    align-items: center;
+    text-decoration: none;
+}
+
 .item_container *{
     transition: all 0.3s ease-in-out;
 }
@@ -64,4 +71,21 @@
     font-size: 16px;
     line-height: 20px;
     color: rgba(255, 255, 255, 0.646);
+}
+
+.remove {
+    opacity: 0;
+}
+
+.item_container:hover .remove{
+    opacity: 1;
+}
+
+.remove svg{
+    opacity: 0.5;
+    margin-left: 3rem;
+}
+
+.remove:hover svg{
+    opacity: 1;
 }

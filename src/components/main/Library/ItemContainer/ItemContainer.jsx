@@ -1,10 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import Icon from "../../../IconManager/IconManager";
 
 import style from './ItemContainer.module.css'
 
 function ItemContainer(props) {
     return (
         <div className={style.item_container}>
+            <Link to={`/Tracklist/${props.id}`} className={style.link}>
             <div className={style.visual_container}>
             {
                 props.icon !== undefined ? 
@@ -20,6 +23,14 @@ function ItemContainer(props) {
                     {props.subtitle}
                 </span>
             </div>
+            </Link>
+            
+            
+            { props.canRemoved &&
+                <div className={style.remove} onClick={() => props.RemovePlaylist(props.id)}>
+                    <Icon name='Remove'/>
+                </div>
+            }
         </div>
     )
 }

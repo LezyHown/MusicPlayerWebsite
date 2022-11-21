@@ -12,7 +12,8 @@ import { Link } from "react-router-dom";
 function Library(props) {
   const [createBoxVisible, setCreateBoxVisible] = React.useState(false);
   
-  let LibraryItems = props.Data.data;
+  let libItems = props.Data.data;
+  const [update, setUpdate] = React.useState(false);
 
   return (
     <div className={style.library}>
@@ -25,17 +26,27 @@ function Library(props) {
           </Link>
         </div>
 
-        {LibraryItems.map((playlist, index = 0) => 
-          playlist.hasOwnProperty("icon") ? 
-        (
-            <Link to={`/Tracklist/${playlist.id}`} className="link">
-              <ItemContainer key={++index} title={playlist.title} icon={<Icon name={playlist.icon}/>}/>
-            </Link>
-        ):(
-            <Link to={`/Tracklist/${playlist.id}`} className="link">
-              <ItemContainer key={++index} title={playlist.title} img_src={playlist.img_src}/>
-            </Link>
-        ))}
+        { React.useMemo( () =>
+            libItems.map((playlist, index = 0) => playlist.hasOwnProperty("icon") ? 
+            (
+              <ItemContainer key={++index} title={playlist.title} 
+                icon={<Icon name={playlist.icon}/>} 
+                canRemoved={index !== 0} 
+                RemovePlaylist={() => {
+                  props.Data.RemovePlaylist(playlist.id);
+                  setUpdate(!update);
+                }} 
+                id={playlist.id}/>
+            ):(
+              <ItemContainer key={++index} title={playlist.title} img_src={playlist.img_src} 
+                canRemoved={index !== 0} 
+                RemovePlaylist={() => {
+                  props.Data.RemovePlaylist(playlist.id);
+                  setUpdate(!update);
+                }} 
+                id={playlist.id}/>
+            )), [update])
+        }
 
         <AwayListener onClickAway={() => setCreateBoxVisible(false)}>
           <div className={style.btn_container}>
@@ -44,7 +55,10 @@ function Library(props) {
             </button>
 
             {createBoxVisible && (
-              <PlaylistCreateBox addItem={(item) => props.Data.AddPlaylist(item)} HideFunc={() => setCreateBoxVisible(false)}/>
+              <PlaylistCreateBox addItem={(item) => { 
+                props.Data.AddPlaylist(item);
+                setUpdate(!update);
+              }} HideFunc={() => setCreateBoxVisible(false)}/>
             )} 
           </div>
         </AwayListener>

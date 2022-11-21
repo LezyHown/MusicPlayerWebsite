@@ -7,8 +7,10 @@ import $ from 'jquery';
 function AddNewPlaylistItem(addItem, hideSelf, inputs) {
   if (inputs.title.length >= 3) {
     //Создание плейлиста
-    inputs.img.length >= 6 ? addItem({ title: inputs.title, img_src: inputs.img }) : 
-                             addItem({ title: inputs.title, icon: null });
+    if(inputs.img.length >= 6) 
+      addItem({ title: inputs.title, img_src: inputs.img, id: inputs.title })
+    else
+      addItem({ title: inputs.title, icon: null, id: inputs.title });
 
     hideSelf();
   } else {

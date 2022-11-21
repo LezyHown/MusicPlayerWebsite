@@ -3,15 +3,9 @@ import React from "react";
 import style from './toogleswitch.module.css';
 
 function ToogleSwitch(props){
-    const [checked, setChecked] = React.useState(props.checked);
-
     return (
         <label className={style.toogle_switch}>
-            <input type="checkbox" checked={checked} onChange={() => 
-            { 
-                setChecked(!checked);
-                props.setChange(!checked);
-            }}/>
+            <input type="checkbox" checked={props.checked} onChange={(e) => props.setChange(e.currentTarget.checked)}/>
             <span className={style.slider}></span>
         </label>
     );

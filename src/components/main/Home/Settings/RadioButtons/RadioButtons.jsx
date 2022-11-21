@@ -11,7 +11,7 @@ function RadioButtons(props){
             current = _name === props.default;
 
         buttons.push(<input key={_id} type="radio" name="none" id={_id} checked={current} onChange={() => null}/>)
-        buttons.push(<label key={_id + 1} htmlFor={_id} onClick={() => props.setCurrent(_name)}>{_name}</label>)
+        buttons.push(<label className="button" key={_id + 1} htmlFor={_id} onClick={() => props.setCurrent(_name)}>{_name}</label>)
     }
 
     return (

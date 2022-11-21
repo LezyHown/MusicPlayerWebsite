@@ -31,14 +31,14 @@ function TrackList(props) {
 
           <div className={style.track_container}>
             { isExist ? 
-              playlist.data.map((t) => (
+              playlist.data.map((track) => (
                   <Track
                     isTrack={true}
-                    title={t.title}
-                    img_src={t.img}
-                    subtitle={t.subtitle}
+                    title={track.title}
+                    img_src={track.img}
+                    subtitle={track.subtitle}
                   />
-              )) : <h1 className={style.title}>Playlist doesn't exist...</h1>}
+              )) : <h1 className={style.title}>Playlist is empty...</h1>}
           </div>
         </div>
       </div>
