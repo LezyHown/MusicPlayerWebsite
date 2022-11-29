@@ -1,6 +1,6 @@
 import React from "react";
 
-import style from './toogleswitch.module.css';
+import style from './toogleswitch.module.scss';
 
 function ToogleSwitch(props){
     return (

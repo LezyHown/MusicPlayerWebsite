@@ -1,6 +1,6 @@
 import React from "react";
 
-import style from './RadioButtons.module.css';
+import style from './RadioButtons.module.scss';
 
 function RadioButtons(props){
     let buttons = [];

@@ -1,7 +1,7 @@
 import React from "react";
 
-import darkTheme from "./style/home.module.css";
-import whiteTheme from './style/home_white.module.css';
+import darkTheme from "./style/home.module.scss";
+import whiteTheme from './style/home_white.module.scss';
 
 import MusicCategory from "../MusicCategory/MusicCategory";
 import { Link } from "react-router-dom";

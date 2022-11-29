@@ -27,7 +27,7 @@ function AddNewPlaylistItem(addItem, hideSelf, inputs) {
 }
 
 function PlaylistCreateBox(props) {
-    let inputTitle = React.createRef(), inputImg = React.createRef();
+    let inputTitle = React.useRef(null), inputImg = React.useRef(null);
     
     let Add = () => AddNewPlaylistItem(props.addItem, props.HideFunc, 
       { title: inputTitle.current.value, img: inputImg.current.value }

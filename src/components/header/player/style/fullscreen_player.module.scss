@@ -1,0 +1,104 @@
+.player{
+    position: absolute;
+    min-width: 100vw;
+    min-height: 100vh;
+    padding-bottom: 1rem;
+    background-color: #0E002C;
+    left: 0;
+    top: 0;
+    z-index: 99;
+
+    .back{
+        position: relative;
+        bottom: calc(20rem + 2rem); 
+        right: 20rem;
+        transform: rotate(-90deg);
+        cursor: pointer;
+        
+        margin-top: 1.5rem;
+
+        &:hover{
+            filter: brightness(0.8);
+        }
+    }
+
+    .container{
+        width: 688px;
+        margin: 0 auto;
+        padding: 1rem;
+        margin-top: 1rem;
+    }
+
+    .song_img{
+        cursor: auto;
+        display: block;
+        margin-top: 55.4px;
+        padding: 0 1rem 0 0.5rem;
+        width: 316px;
+        height: 316px;
+        margin: 0 auto;
+    }
+    
+    .song_title, .song_artist{
+        margin: 0;
+        padding-left: 1.2rem;
+    }
+    .song_title{
+        margin-top: 2rem;
+    }
+    .song_artist{
+        font-weight: 300;
+    }
+
+    .progressbar{
+        margin-top: 1.5rem;
+        background-color: black;
+        border-radius: 17px;
+        transition: all 0.2s ease-in-out;
+
+        .progress{
+            border-radius: 17px;
+            background-color: white;
+            height: 13px;
+        }
+    }
+
+    [class*='TV'] svg{
+        transform: scale(0.85);
+        transition: all 0.15s ease-in-out;
+        margin-left: 2rem;
+
+        &:hover{
+            cursor: pointer;
+            filter: invert(0.3) sepia(1) saturate(15) hue-rotate(97.2deg) brightness(0.65);
+        }
+    }
+
+    .buttons_container{
+        display: inline-flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 1.3rem;
+
+        .smaller{
+            display: contents;
+            svg{transform: scale(0.9);}
+        }
+
+        [class*='Mixed'] svg{
+            transform: scale(1.7);
+        }
+
+        svg{
+            margin: 1.5rem 1rem;
+            transition: all 0.15s ease-in-out;
+
+            &:hover{
+                cursor: pointer;
+                filter: invert(0.3) sepia(1) saturate(15) hue-rotate(97.2deg) brightness(0.65);
+            }
+        }
+    }
+}

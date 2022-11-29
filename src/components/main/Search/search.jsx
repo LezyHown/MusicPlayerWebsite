@@ -1,6 +1,6 @@
 import React from "react";
 
-import style from './search.module.css';
+import style from './search.module.scss';
 
 import Icon from '../../IconManager/IconManager';
 import MusicCategory from "../MusicCategory/MusicCategory";

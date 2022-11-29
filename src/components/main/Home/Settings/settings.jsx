@@ -1,7 +1,7 @@
 import React from "react";
 
-import darkTheme from './style/settings.module.css';
-import whiteTheme from './style/settings_white.module.css';
+import darkTheme from './style/settings.module.scss';
+import whiteTheme from './style/settings_white.module.scss';
 import { Link } from "react-router-dom";
 
 import Icon from "../../../IconManager/IconManager";

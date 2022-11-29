@@ -2,9 +2,8 @@ import React from "react";
 
 import {Link, useLocation} from 'react-router-dom';
 
-import style from './header.module.css';
+import style from './header.module.scss';
 
-import EmptySongImg from './images/emptysong.png';
 import Player from "./player/player";
 
 import Icon from '../IconManager/IconManager';
@@ -41,18 +40,11 @@ function Header(){
                 </Link>
             </div>
 
-            <div className={style.player_container}>
-                <img className={style.song_img} alt="song" src={EmptySongImg}/>
-                
-                <h4 className={style.song_title}>Music Playing</h4>
-                <span className={style.song_artist}>Artist</span>
-                
-                {/* ----------------Player-----------------------
-                    pstate это состояние плеера, включен-выключен, 
-                    pwidth на каком проценте сейчас трек  
-                */}
-                <Player pwidth="10%" pstate="false"/>
-            </div>
+            {/* ----------------Player-----------------------
+                pstate это состояние плеера, включен-выключен, 
+                pwidth на каком проценте сейчас трек  
+            */}
+            <Player pwidth="10%" pstate="false"/>
         </div>
     );
 }

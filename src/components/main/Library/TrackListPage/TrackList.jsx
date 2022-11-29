@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useParams } from "react-router-dom";
 import Icon from "../../../IconManager/IconManager";
 
-import style from './TrackList.module.css';
+import style from './TrackList.module.scss';
 import Track from '../ItemContainer/ItemContainer';
 
 function TrackList(props) {

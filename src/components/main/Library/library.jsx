@@ -6,7 +6,7 @@ import ItemContainer from "./ItemContainer/ItemContainer";
 
 import AwayListener from "@mui/base/ClickAwayListener";
 
-import style from "./library.module.css";
+import style from "./library.module.scss";
 import { Link } from "react-router-dom";
 
 function Library(props) {

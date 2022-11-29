@@ -32,31 +32,4 @@
         }
     }
 
-    .player_container{
-        display: flex;
-        flex-direction: column;
-        margin: 0 5px;
-        justify-content: center;
-        width: 340px;
-        align-self: center;
-
-        .song_img{
-            margin-top: 55.4px;
-            padding: 0 1rem 0 0.5rem;
-        }
-        
-        .song_title, .song_artist{
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
-
-        .song_title{
-            margin-top: 13px;
-        }
-
-        .song_artist{
-            margin-bottom: 6px;
-        }
-    }
 }
